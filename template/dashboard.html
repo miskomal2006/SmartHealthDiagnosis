@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diagnosis Dashboard | SmartHealth AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header dashboard-header">
+    <div class="brand-block">
+      <div class="brand-logo" aria-hidden="true">
+        <span class="brand-cross"></span>
+      </div>
+      <div class="brand-copy">
+        <h2>SmartHealth AI</h2>
+        <p>Clinical Decision Dashboard</p>
+      </div>
+    </div>
+    <div>
+      <a href="diagnosis.html" class="btn" id="newDiagnosisBtn">New Diagnosis</a>
+      <a href="#" class="btn outline" onclick="logout()">Logout</a>
+    </div>
+  </header>
+
+  <section class="dash-wrapper">
+    <div class="dash-card highlight">
+      <h3 id="dashCardTitle">Latest Diagnosis</h3>
+      <p><span id="dashDisease">-</span></p>
+      <p><span id="dashConfidence">-</span></p>
+      <p><span id="dashRisk">-</span></p>
+    </div>
+
+    <div class="dash-card">
+      <h3>Previous Reports</h3>
+      <div id="cardContent2"></div>
+    </div>
+
+    <div class="dash-card">
+      <h3 id="thirdCardTitle">Health Summary</h3>
+      <p>Total Diagnoses: <span id="totalDiagnosis">0</span></p>
+      <p id="totalRiskRow">Total Risk Diagnoses: <span id="totalRiskDiagnosis">0</span></p>
+      <p id="doctorSuggestionsTitle"><strong>Doctor Suggestions</strong></p>
+      <div id="patientSuggestions">No suggestions yet.</div>
+      <div id="adminUserList" class="hidden"></div>
+    </div>
+  </section>
+
+  <script src="js/main.js"></script>
+  <div id="toast" class="toast hidden"></div>
+  <div id="loader" class="loader hidden"></div>
+</body>
+</html>

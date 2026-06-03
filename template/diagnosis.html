@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Health Diagnosis</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="diag-bg">
+  <div class="diag-container">
+    <header class="diag-header">
+      <span class="diag-badge">Clinical Intake Form</span>
+      <h1>Smart Health Diagnosis</h1>
+      <p>AI-based disease prediction using symptoms and health parameters</p>
+    </header>
+
+    <form class="diag-form" onsubmit="submitDiagnosis(event)">
+      <section class="diag-section">
+        <h3>Select Disease to Predict</h3>
+        <select id="diseaseType" required>
+          <option value="">Choose Disease</option>
+          <option value="diabetes">Diabetes</option>
+          <option value="heart">Heart Disease</option>
+          <option value="respiratory">Respiratory Disease</option>
+          <option value="kidney">Kidney Disease</option>
+          <option value="liver">Liver Disease</option>
+          <option value="cancer">Cancer</option>
+        </select>
+      </section>
+
+      <section class="diag-section">
+        <h3>Patient Basic Information</h3>
+        <div class="grid-2">
+          <input type="text" id="fullName" placeholder="Full Name" required />
+          <input type="number" id="age" placeholder="Age" required />
+          <select id="gender" required>
+            <option value="">Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Transgender</option>
+            <option>Prefer not to say</option>
+          </select>
+          <input type="text" id="bloodGroup" placeholder="Blood Group" />
+          <input type="number" id="height" placeholder="Height (cm)" />
+          <input type="number" id="weight" placeholder="Weight (kg)" />
+          <input type="text" id="bmi" placeholder="BMI (Auto)" readonly />
+          <input type="text" id="location" placeholder="Location (Optional)" />
+        </div>
+      </section>
+
+      <section class="diag-section">
+        <h3>Vital Signs</h3>
+        <div class="grid-2">
+          <input type="number" id="temperature" placeholder="Body Temperature (C)" />
+          <input type="number" id="heartRate" placeholder="Heart Rate (BPM)" />
+          <input type="number" id="bpSys" placeholder="BP Systolic" />
+          <input type="number" id="bpDia" placeholder="BP Diastolic" />
+          <input type="number" id="respRate" placeholder="Respiratory Rate" />
+          <input type="number" id="spo2" placeholder="Oxygen Saturation (SpO2)" />
+        </div>
+      </section>
+
+      <section class="diag-section">
+        <h3>Chief Complaints</h3>
+        <div class="symptom-group">
+          <label><input type="checkbox" value="fever" /> Fever</label>
+          <label><input type="checkbox" value="cough" /> Cough</label>
+          <label><input type="checkbox" value="chest_pain" /> Chest Pain</label>
+          <label><input type="checkbox" value="shortness_of_breath" /> Shortness of Breath</label>
+          <label><input type="checkbox" value="fatigue" /> Fatigue</label>
+          <label><input type="checkbox" value="headache" /> Headache</label>
+          <label><input type="checkbox" value="dizziness" /> Dizziness</label>
+          <label><input type="checkbox" value="abdominal_pain" /> Abdominal Pain</label>
+          <label><input type="checkbox" value="joint_pain" /> Joint Pain</label>
+          <label><input type="checkbox" value="nausea" /> Nausea or Vomiting</label>
+          <label><input type="checkbox" value="weight_change" /> Weight Loss or Gain</label>
+        </div>
+      </section>
+
+      <section class="diag-section">
+        <h3>Symptom Severity and Duration</h3>
+        <div class="grid-2">
+          <select id="severity">
+            <option value="">Severity</option>
+            <option>Mild</option>
+            <option>Moderate</option>
+            <option>Severe</option>
+          </select>
+          <select id="frequency">
+            <option value="">Frequency</option>
+            <option>Occasional</option>
+            <option>Frequent</option>
+            <option>Constant</option>
+          </select>
+          <input type="number" id="duration" placeholder="Duration (Days)" />
+        </div>
+      </section>
+
+      <section class="diag-section">
+        <h3>Medical History</h3>
+        <textarea id="medicalHistory" placeholder="Existing conditions, past surgeries, family history"></textarea>
+      </section>
+
+      <section class="diag-section">
+        <h3>Lifestyle and Risk Factors</h3>
+        <div class="grid-2">
+          <select id="smoking">
+            <option value="">Smoking</option>
+            <option>No</option>
+            <option>Yes</option>
+            <option>Former</option>
+          </select>
+          <select id="alcohol">
+            <option value="">Alcohol Consumption</option>
+            <option>No</option>
+            <option>Occasional</option>
+            <option>Regular</option>
+          </select>
+          <select id="activity">
+            <option value="">Physical Activity</option>
+            <option>Low</option>
+            <option>Moderate</option>
+            <option>High</option>
+          </select>
+          <input type="number" id="sleep" placeholder="Sleep Duration (hrs)" />
+          <input type="number" id="stress" placeholder="Stress Level (1-10)" />
+        </div>
+      </section>
+
+      <div class="diag-submit-row">
+        <p>Review entries carefully before running the diagnosis analysis.</p>
+        <button type="submit" class="analyze-btn">Analyze and Predict Disease</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/main.js"></script>
+  <div id="toast" class="toast hidden"></div>
+  <div id="loader" class="loader hidden"></div>
+</body>
+</html>

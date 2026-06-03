@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Register | SmartHealth AI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-bg">
+
+<div class="auth-card">
+  <h2>Create Account</h2>
+
+  <form onsubmit="registerUser(event)">
+    <input type="text" id="regName" placeholder="Full Name (First & Last)" required>
+    <small class="error" id="nameError"></small>
+
+    <input type="email" id="regEmail" placeholder="Email" required>
+    <small class="error" id="emailError"></small>
+
+    <select id="regRole" required>
+      <option value="">Select Role</option>
+      <option value="patient">Patient</option>
+      <option value="doctor">Doctor</option>
+      <option value="admin">Admin</option>
+    </select>
+
+    <input type="password" id="regPassword"
+      placeholder="Password"
+      pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@$!%*?&]).{8,}"
+      required>
+    <small>Password must contain uppercase, lowercase, number & special character</small><br>
+    
+    <button type="submit">Register</button>
+  </form>
+
+  <p>Already registered? <a href="login.html">Login</a></p>
+</div>
+
+<script src="js/main.js"></script>
+<div id="toast" class="toast hidden"></div>
+<div id="loader" class="loader hidden"></div>
+</body>
+</html>

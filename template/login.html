@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login | SmartHealth AI</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="auth-bg">
+
+<div class="auth-card">
+  <h2>Login</h2>
+
+  <form onsubmit="login(event)">
+    <input type="email" id="loginEmail" placeholder="Email" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <small class="error" id="loginError"></small>
+    <button type="submit">Login</button>
+    <p style="text-align:center; margin-top:10px;">
+      <a href="forgot-password.html">Forgot Password?</a>
+    </p>
+  </form>
+
+  <p>New user? <a href="register.html">Create account</a></p>
+</div>
+
+<script src="js/main.js"></script>
+<div id="toast" class="toast hidden"></div>
+<div id="loader" class="loader hidden"></div>
+</body>
+</html>

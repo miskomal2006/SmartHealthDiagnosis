@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Diagnosis Result | SmartHealth AI</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="diag-bg result-page">
+  <header class="app-header">
+    <h2>
+      <img src="assets/images/auth-illustration.png" class="header-icon" alt="AI Diagnosis" />
+      SmartHealth AI
+    </h2>
+    <a href="dashboard.html" class="btn">Dashboard</a>
+  </header>
+
+  <div class="result-container">
+    <section class="result-main">
+      <h1>Diagnosis Result</h1>
+      <p class="subtitle">AI-based analysis of submitted patient data</p>
+      <div class="disease-box">
+        <h2 id="predictedDisease">-</h2>
+        <span class="category" id="diseaseCategory">-</span>
+      </div>
+    </section>
+
+    <section class="result-metrics">
+      <div class="metric-card confidence">
+        <h4>Risk Probability (%)</h4>
+        <p id="riskProbability">-%</p>
+      </div>
+      <div class="metric-card confidence">
+        <h4>Confidence Level</h4>
+        <p id="confidenceLevel">-</p>
+      </div>
+      <div class="metric-card risk">
+        <h4>Severity Stage</h4>
+        <p id="severityStage">-</p>
+      </div>
+    </section>
+
+    <section class="result-precautions">
+      <h3>AI Explanation</h3>
+      <ul id="explanation">
+        <li>-</li>
+      </ul>
+    </section>
+
+    <section class="medical-note">
+      <label class="consent-box">
+        <input type="checkbox" id="aiConsent" />
+        I consent to AI-based analysis
+      </label>
+      <p class="warning-text">
+        This is not a medical diagnosis.
+        The result is generated using an AI-based predictive model and is intended
+        for preliminary assessment only.
+      </p>
+    </section>
+
+    <div class="result-actions">
+      <button class="btn" id="savePdfBtn" onclick="requireConsentAndGeneratePdf()">Save and Generate PDF Report</button>
+      <a href="diagnosis.html" class="btn outline" id="newDiagnosisLink" onclick="return requireConsentAndGoDiagnosis(event)">New Diagnosis</a>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <div id="toast" class="toast hidden"></div>
+  <div id="loader" class="loader hidden"></div>
+</body>
+</html>
